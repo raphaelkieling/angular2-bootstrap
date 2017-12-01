@@ -14,6 +14,7 @@ import { BaseService } from './services/base.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRouting,
     NotFoundModule,
     LoginContainerModule,
-    RouterModule
+    RouterModule,
+    AlertModule.forRoot()
   ],
   providers: [
     BaseService,

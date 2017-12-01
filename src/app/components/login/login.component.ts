@@ -1,19 +1,17 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { IAlert } from './../../domain/interfaces/IAlert';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-login',
-    templateUrl: './login.html',
-    styles: [`
-        .card{
-            margin-top:70px;
-        }
-    `]
+    templateUrl: './login.html'
 })
 export class LoginComponent implements OnInit {
 
     @Output() submit = new EventEmitter<object>();
     @Output() valid = new EventEmitter<boolean>();
+    @Input() loading = false;
+    
     loginF: FormGroup;
 
     constructor(
