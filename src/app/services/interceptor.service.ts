@@ -13,8 +13,8 @@ import { AuthService } from './auth.service';
 export class InterceptorService implements HttpInterceptor {
   constructor(public auth: AuthService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    
-    console.warn('Deve-se modificar aqui no arquivo { interceptor.service } a cada novo projeto ');
+
+    console.warn('Change here { interceptor.service } in a new Project ');
 
     request = request.clone({
       setHeaders: {

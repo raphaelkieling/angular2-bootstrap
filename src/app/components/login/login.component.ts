@@ -3,61 +3,71 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.html'
+  selector: 'app-login',
+  templateUrl: './login.html'
 })
 export class LoginComponent implements OnInit {
 
-    @Output() submit = new EventEmitter<object>();
-    @Output() valid = new EventEmitter<boolean>();
-    @Input() loading = false;
-    
-    loginF: FormGroup;
+  @Output() submitForm = new EventEmitter<object>();
+  @Output() valid = new EventEmitter<boolean>();
+  @Input() loading = false;
 
-    constructor(
-        public formBuilder: FormBuilder
-    ) {
-        this.constroiFormulario();
+  loginF: FormGroup;
+
+  errors = {
+    email: {
+      email: 'Email is not valid'
     }
+  };
 
-    ngOnInit() { }
+  constructor(
+    public formBuilder: FormBuilder
+  ) {
+    this.buildForm();
+  }
+
+  ngOnInit() { }
 
 
-    submitEvent() {
-        (this.loginF.get('save').value) ?
-            this.salvarEmail()
-            :
-            this.retirarEmailDaMemoria()
+  submitEvent() {
+    this.saveInfo(this.loginF.get('save').value);
 
 
-        this.submit.emit(this.loginF.value);
-    }
+    this.submitForm.emit(this.loginF.value);
+  }
 
-    constroiFormulario() {
-        this.loginF = this.formBuilder.group({
-            email: [this.pegaEmail(), Validators.compose([
-                Validators.required,
-                Validators.email
-            ])],
-            password: ['', Validators.required],
-            save: [this.hasEmail(this.pegaEmail()), Validators.required]
-        })
-    }
+  private saveInfo(save) {
+    (save) ?
+      this.saveEmailInLocalStorage()
+      :
+      this.removeEmailFromLocalStorage();
+  }
 
-    salvarEmail() {
-        localStorage.setItem('saveEmail', this.loginF.get('email').value);
-    }
+  buildForm() {
+    this.loginF = this.formBuilder.group({
+      email: [this.getEmailInLocalStorage(), Validators.compose([
+        Validators.required,
+        Validators.email
+      ])],
+      password: ['', Validators.required],
+      save: [this.hasEmail(this.getEmailInLocalStorage()), Validators.required]
+    });
+  }
 
-    pegaEmail() {
-        const emailSaved = localStorage.getItem('saveEmail')
-        return (emailSaved) ? emailSaved : '';
-    }
+  saveEmailInLocalStorage() {
+    localStorage.setItem('saveEmail', this.loginF.get('email').value);
+  }
 
-    hasEmail(email) {
-        return (email) ? true : false;
-    }
+  getEmailInLocalStorage() {
+    const emailSaved = localStorage.getItem('saveEmail');
+    return (emailSaved) ? emailSaved : '';
+  }
 
-    retirarEmailDaMemoria() {
-        localStorage.removeItem('saveEmail');
-    }
+  hasEmail(email) {
+    return (email) ? true : false;
+  }
+
+  removeEmailFromLocalStorage() {
+    localStorage.removeItem('saveEmail');
+  }
 }

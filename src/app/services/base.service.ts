@@ -6,24 +6,24 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class BaseService implements IServiceCrud {
 
-    urlAPI = ''
+  urlAPI = 'YOUR-URL-API'
 
-    constructor(public httpCliente: HttpClient) { }
+  constructor(public httpCliente: HttpClient) { }
 
-    getAll(url: any): Observable<any[]> {
-        return this.httpCliente.get<any>(url);
-    }
-    getUnique(url: any, id: any): Observable<any[]> {
-        return this.httpCliente.get<any[]>(`${this.urlAPI}/${url}/${id}`);
-    }
-    post(url: any, data: any):Observable<any> {
-        return this.httpCliente.post<any>(`${this.urlAPI}/${url}`,data);
-    }
-    put(url: any, data: any) {
-        return this.httpCliente.put<any>(`${this.urlAPI}/${url}`,data);
-    }
-    delete(url: any, id: any) {
-        return this.httpCliente.delete<any>(`${this.urlAPI}/${url}/${id}`);
-    }
+  getAll(url: any): Observable<any[]> {
+    return this.httpCliente.get<any>(url);
+  }
+  getUnique(url: any, id: any): Observable<any[]> {
+    return this.httpCliente.get<any[]>(`${this.urlAPI}/${url}/${id}`);
+  }
+  post(url: any, data: any): Observable<any> {
+    return this.httpCliente.post<any>(`${this.urlAPI}/${url}`, data);
+  }
+  put(url: any, data: any) {
+    return this.httpCliente.put<any>(`${this.urlAPI}/${url}`, data);
+  }
+  delete(url: any, id: any) {
+    return this.httpCliente.delete<any>(`${this.urlAPI}/${url}/${id}`);
+  }
 
 }
