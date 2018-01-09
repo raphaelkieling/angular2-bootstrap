@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class BaseService implements IServiceCrud {
+export class BaseService {
 
   urlAPI = 'YOUR-URL-API'
 
@@ -19,8 +19,8 @@ export class BaseService implements IServiceCrud {
   post(url: any, data: any): Observable<any> {
     return this.httpCliente.post<any>(`${this.urlAPI}/${url}`, data);
   }
-  put(url: any, data: any) {
-    return this.httpCliente.put<any>(`${this.urlAPI}/${url}`, data);
+  put(url: any, id: any, data: any) {
+    return this.httpCliente.put<any>(`${this.urlAPI}/${url}/${id}`, data);
   }
   delete(url: any, id: any) {
     return this.httpCliente.delete<any>(`${this.urlAPI}/${url}/${id}`);
