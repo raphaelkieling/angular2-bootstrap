@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { AdminContainerModule } from './container/admin-container/admin-container.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AlertModule } from 'ngx-bootstrap/alert';
     AppRouting,
     NotFoundModule,
     LoginContainerModule,
+    AdminContainerModule,
     RouterModule,
     AlertModule.forRoot()
   ],

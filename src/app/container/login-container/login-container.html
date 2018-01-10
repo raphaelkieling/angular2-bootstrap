@@ -5,8 +5,9 @@
       <div class="card-body">
         <h1 class="card-title">BOOTSTRAP BOILERPLATE</h1>
 
-        <app-login [loading]="false" (submitForm)="onSubmit($event)"></app-login>
-
+        <app-login [loading]="false" (submitForm)="onSubmit($event)">
+          <a class="forgot float-right" href="#">Forgot Password</a>
+        </app-login>
         <br>
 
         <alert *ngIf="alert" [type]="alert.type">

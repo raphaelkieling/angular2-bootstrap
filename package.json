@@ -30,6 +30,7 @@
     "md-toast": "0.0.1-alpha.1",
     "ngx-bootstrap": "^2.0.0-beta.9",
     "rxjs": "^5.5.2",
+    "table-ng-quick": "0.0.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

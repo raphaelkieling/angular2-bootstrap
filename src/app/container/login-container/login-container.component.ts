@@ -5,23 +5,27 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-login-container',
   templateUrl: './login-container.html',
   styles: [`
-    .card{
+        .card{
             margin-top:70px;
         }
 
         .card-title{
           text-align: 'center'
         }
+
+        .forgot{
+          font-size:14px;
+        }
     `]
 })
 export class LoginContainerComponent implements OnInit {
-  alert: IAlert = { type: 'danger', strong: 'Oh...', message: 'Has a problem in login' }
+  alert: IAlert;
 
   constructor() { }
 
   ngOnInit() { }
 
   onSubmit(form) {
-    console.log(form);
+    this.alert = { type: 'danger', strong: 'Oh...', message: 'Has a problem in login' };
   }
 }
