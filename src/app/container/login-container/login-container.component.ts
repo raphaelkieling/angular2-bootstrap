@@ -24,7 +24,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginContainerComponent implements OnInit {
   alert: IAlert;
-  loginForm =  true;
+  loginForm = true;
+  loading = false;
 
   constructor() { }
 
@@ -32,5 +33,13 @@ export class LoginContainerComponent implements OnInit {
 
   onSubmit(form) {
     this.alert = { type: 'danger', strong: 'Oh...', message: 'Has a problem in login' };
+  }
+
+  onSubmitForgot(form) {
+    this.alert = { type: 'success', strong: 'Oh...', message: 'Email has sended' };
+  }
+
+  clearAlert() {
+    this.alert = null;
   }
 }

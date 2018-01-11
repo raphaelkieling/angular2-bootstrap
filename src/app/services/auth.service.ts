@@ -5,7 +5,7 @@ export class AuthService {
 
   // token
   public set token(token) {
-    sessionStorage.setItem('token_', token)
+    sessionStorage.setItem('token_', token);
   }
 
   public get token() {

@@ -14,7 +14,7 @@ export class InterceptorService implements HttpInterceptor {
   constructor(public auth: AuthService) {}
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    console.warn('Change here { interceptor.service } in a new Project ');
+    console.warn('Change here { interceptor.service } in a new Project for Authorization');
 
     request = request.clone({
       setHeaders: {

@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AdminContainerModule } from './container/admin-container/admin-container.module';
+import { ConfigService } from './services/config.service';
 
 @NgModule({
   declarations: [
@@ -37,10 +38,11 @@ import { AdminContainerModule } from './container/admin-container/admin-containe
     AuthService,
     AmbientService,
     {
-      provide:HTTP_INTERCEPTORS,
+      provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
-      multi:true
-    }
+      multi: true
+    },
+    ConfigService
   ],
   bootstrap: [AppComponent]
 })

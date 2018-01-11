@@ -8,5 +8,5 @@ import { Component, ViewContainerRef } from '@angular/core';
 export class AppComponent {
   title = 'app';
 
-  constructor(  ){}
+  constructor() { }
 }

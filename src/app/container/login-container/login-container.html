@@ -5,25 +5,35 @@
       <div class="card-body">
         <h1 class="card-title" style="text-align:center">BOOTSTRAP BOILERPLATE</h1>
 
-        <div *ngIf="loginForm; else forgotForm">
-          <app-login [loading]="false" (submitForm)="onSubmit($event)">
-            <a class="small-ng-content forgot float-right" (click)="loginForm = false">Forgot Password</a>
-          </app-login>
+        <div *ngIf="loading; else form">
+          <app-loading></app-loading>
         </div>
 
-        <ng-template #forgotForm>
-          <app-forgot>
-            <a class="small-ng-content login float-right" (click)="loginForm = true">Voltar</a>
-          </app-forgot>
+        <ng-template #form>
+          <div *ngIf="loginForm; else forgotForm">
+            <app-login [loading]="false" (submitForm)="onSubmit($event)">
+              <a class="small-ng-content forgot-link float-right" (click)="loginForm = false;clearAlert();">Forgot Password</a>
+            </app-login>
+          </div>
+
+          <ng-template #forgotForm>
+            <app-forgot (submitForm)="onSubmitForgot($event)" (back)="loginForm = true;clearAlert();"></app-forgot>
+          </ng-template>
+
+          <br>
+
+          <div class="row">
+            <div class="col-md-12">
+              <alert *ngIf="alert" [type]="alert.type">
+                <strong>{{alert.strong}}</strong> {{alert.message}}
+              </alert>
+            </div>
+          </div>
         </ng-template>
-
-        <br>
-
-        <alert *ngIf="alert" [type]="alert.type">
-          <strong>{{alert.strong}}</strong> {{alert.message}}
-        </alert>
 
       </div>
     </div>
   </div>
 </div>
+
+<br>

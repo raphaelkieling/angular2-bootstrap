@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginModule } from '../../components/login/login.module';
 import { RouterModule } from '@angular/router';
+import { LoadingModule } from '../../components/loading/loading.module';
 
 @NgModule({
     declarations: [LoginContainerComponent],
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
         LoginModule,
         AlertModule,
         RouterModule,
-        ForgotModule
+        ForgotModule,
+        LoadingModule
     ],
     exports: [LoginContainerComponent],
     providers: [],
