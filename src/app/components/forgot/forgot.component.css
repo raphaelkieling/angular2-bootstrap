@@ -1,0 +1,10 @@
+img{
+  width:100%;
+  max-width: 200px;
+  height:auto;
+}
+
+#img-forgot{
+  padding:40px;
+  text-align: center;
+}

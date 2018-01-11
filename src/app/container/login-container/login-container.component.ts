@@ -13,13 +13,18 @@ import { Component, OnInit } from '@angular/core';
           text-align: 'center'
         }
 
-        .forgot{
+        .small-ng-content{
           font-size:14px;
+        }
+
+        a{
+          cursor:pointer;
         }
     `]
 })
 export class LoginContainerComponent implements OnInit {
   alert: IAlert;
+  loginForm =  true;
 
   constructor() { }
 

@@ -3,11 +3,20 @@
 
     <div class="card">
       <div class="card-body">
-        <h1 class="card-title">BOOTSTRAP BOILERPLATE</h1>
+        <h1 class="card-title" style="text-align:center">BOOTSTRAP BOILERPLATE</h1>
 
-        <app-login [loading]="false" (submitForm)="onSubmit($event)">
-          <a class="forgot float-right" href="#">Forgot Password</a>
-        </app-login>
+        <div *ngIf="loginForm; else forgotForm">
+          <app-login [loading]="false" (submitForm)="onSubmit($event)">
+            <a class="small-ng-content forgot float-right" (click)="loginForm = false">Forgot Password</a>
+          </app-login>
+        </div>
+
+        <ng-template #forgotForm>
+          <app-forgot>
+            <a class="small-ng-content login float-right" (click)="loginForm = true">Voltar</a>
+          </app-forgot>
+        </ng-template>
+
         <br>
 
         <alert *ngIf="alert" [type]="alert.type">

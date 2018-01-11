@@ -1,0 +1,22 @@
+
+<div class="row">
+  <div class="col-md-12" id="img-forgot">
+    <img src="assets/img/email-forgot.png" alt="">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto rerum illo modi rem quas. Voluptates magnam officia in totam vel suscipit provident distinctio illum labore! Sapiente recusandae mollitia eligendi fugiat?
+  </div>
+</div>
+
+<br>
+
+<form [formGroup]="form">
+  <div class="form-group">
+    <input bs-input bs-validator id="email" [label]="'E-mail to send'" formControlName="email" type="email" placeholder="Entry to your email" ngModel>
+  </div>
+</form>
+
+<ng-content select=".login"></ng-content>
