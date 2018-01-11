@@ -6,12 +6,12 @@
 - [x] 404 Page
 - [x] Forgot Password
 - [ ] Change Password with email key
-- [ ] Admin
+- [x] Admin
 - [x] Bootstrap Validator :fire:
 - [x] Table Quick
 - [x] Service Config
-- [ ] Interceptor
-- [ ] Token JWT
+- [x] Interceptor
+- [x] Token JWT
 - [x] Loader
 - [x] Navbar
 - [ ] Route Guard
