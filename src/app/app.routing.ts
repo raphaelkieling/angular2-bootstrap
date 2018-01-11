@@ -3,7 +3,7 @@ import { LoginContainerComponent } from './container/login-container/login-conta
 import { NotFoundComponent } from './container/404/notfound';
 import { AppComponent } from './app.component';
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule } from "@angular/router";
+import { Routes, RouterModule } from '@angular/router';
 
 export const APP_ROUTES: Routes = [
   {
@@ -13,7 +13,7 @@ export const APP_ROUTES: Routes = [
       { path: '**', component: NotFoundComponent, pathMatch: 'full' }
     ]
   }
-]
+];
 
 @NgModule({
   imports: [
