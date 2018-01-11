@@ -26,10 +26,10 @@ import { ConfigService } from './services/config.service';
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AdminContainerModule,
+    LoginContainerModule,
     AppRouting,
     NotFoundModule,
-    LoginContainerModule,
-    AdminContainerModule,
     RouterModule,
     AlertModule.forRoot()
   ],

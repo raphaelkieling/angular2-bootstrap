@@ -10,7 +10,6 @@ export const APP_ROUTES: Routes = [
     path: '', component: AppComponent, children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginContainerComponent },
-      { path: 'admin', component: AdminContainerComponent },
       { path: '**', component: NotFoundComponent, pathMatch: 'full' }
     ]
   }
