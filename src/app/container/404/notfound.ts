@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
             <br><br>
             <h1>404 Not Found</h1>
             <h3>Nothing to see :(</h3>
-            <p><a href="#">Go to home</a></p>
+            <p><a [routerLink]="['/login']" href="#">Go to home</a></p>
         </div>
     `,
     styles: [``]

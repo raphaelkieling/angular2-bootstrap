@@ -18,9 +18,24 @@
 - [x] Base Service with get, getAll,post,put,delete
 - [ ] Ambient Service for the logging session 
 - [ ] Language change *en* / *pt-br* / *es*
+- [ ] 
  
 ### Routes
 
 /login  
 /admin  
 /** [404 error page]
+
+### Start use
+Install Angular >= 2 to use
+```sh
+  git clone https://github.com/raphaelkieling/angular2-bootstrap
+```   
+
+```
+  npm install
+```   
+
+```
+  ng serve
+```
