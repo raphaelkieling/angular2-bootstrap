@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AmbientService {
 
-    constructor(){}
+  constructor() { }
 
-    public set user(user){
-        sessionStorage.setItem('user_',user);
-    }
+  public set user(user: string) {
+    sessionStorage.setItem('user_', JSON.stringify(user));
+  }
 
-    public get user(){
-        return sessionStorage.getItem('user_');
-    }
+  public get user() {
+    const user = sessionStorage.getItem('user_');
+    return user ? JSON.parse(user) : null;
+  }
 }
