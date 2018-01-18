@@ -17,7 +17,10 @@
 - [x] Route Guard
 - [x] Base Service with get, getAll,post,put,delete
 - [ ] Ambient Service for the login session 
-- [ ] Language change *en* / *pt-br* / *es*
+- [x] Language change 
+- [x] Language *en* 
+- [x] Language *pt-br* 
+- [ ] Language *es*
  
 ### Routes
 
