@@ -14,7 +14,7 @@
 - [x] Token JWT
 - [x] Loader
 - [x] Navbar
-- [ ] Route Guard
+- [x] Route Guard
 - [x] Base Service with get, getAll,post,put,delete
 - [ ] Ambient Service for the logging session 
 - [ ] Language change *en* / *pt-br* / *es*

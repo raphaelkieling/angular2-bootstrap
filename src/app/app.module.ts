@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { RouterModule } from '@angular/router';
 import { LoginContainerModule } from './container/login-container/login-container.module';
 import { NotFoundModule } from './container/404/notfound.module';
@@ -37,6 +38,7 @@ import { ConfigService } from './services/config.service';
     BaseService,
     AuthService,
     AmbientService,
+    AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,

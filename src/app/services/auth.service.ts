@@ -4,7 +4,7 @@ import { JwtHelper } from 'angular2-jwt';
 export class AuthService {
 
   // token
-  public set token(token) {
+  public set token(token: string) {
     sessionStorage.setItem('token_', token);
   }
 
@@ -21,7 +21,11 @@ export class AuthService {
   public authenticated() {
     // verifica se o token está expirado
     const jwtH = new JwtHelper();
-    return !jwtH.isTokenExpired(this.token);
+    if (this.token) {
+      return !jwtH.isTokenExpired(this.token);
+    }
+
+    return false;
   }
 
 }
