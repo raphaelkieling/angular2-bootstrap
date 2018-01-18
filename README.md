@@ -16,9 +16,8 @@
 - [x] Navbar
 - [x] Route Guard
 - [x] Base Service with get, getAll,post,put,delete
-- [ ] Ambient Service for the logging session 
+- [ ] Ambient Service for the login session 
 - [ ] Language change *en* / *pt-br* / *es*
-- [ ] Subscription credit pagseguro - paypal
  
 ### Routes
 

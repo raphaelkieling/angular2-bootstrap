@@ -1,3 +1,4 @@
+import { ConfigService } from './../../services/config.service';
 import { IAlert } from './../../domain/interfaces/IAlert';
 import { Component, OnInit } from '@angular/core';
 
@@ -27,16 +28,29 @@ export class LoginContainerComponent implements OnInit {
   loginForm = true;
   loading = false;
 
-  constructor() { }
+  language = null;
+
+  constructor(public configS: ConfigService) {
+    this.language = this.configS.language.getLanguage();
+    console.log(this.language);
+  }
 
   ngOnInit() { }
 
   onSubmit(form) {
-    this.alert = { type: 'danger', strong: 'Oh...', message: 'Has a problem in login' };
+    this.alert = {
+      type: 'danger',
+      strong: this.language.login.alert.errorLogin.strong,
+      message: this.language.login.alert.errorLogin.message
+    };
   }
 
   onSubmitForgot(form) {
-    this.alert = { type: 'success', strong: 'Oh...', message: 'Email has sended' };
+    this.alert = {
+      type: 'success',
+      strong: this.language.login.alert.successForgot.strong,
+      message: this.language.login.alert.successForgot.message
+    };
   }
 
   clearAlert() {

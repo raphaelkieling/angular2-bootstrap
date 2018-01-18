@@ -1,14 +1,14 @@
 <form [formGroup]="loginF">
   <div class="form-group">
-    <input bs-input bs-validator [errors]="errors.email" [label]="'E-mail'" formControlName="email" type="email" class="form-control"
-      placeholder="E-mail">
+    <input bs-input bs-validator [errors]="errors.email" [label]="language.login.forms.email" formControlName="email" type="email" class="form-control"
+      [placeholder]="language.login.forms.email">
   </div>
   <div class="form-group">
-    <input bs-input [label]="'Password'" formControlName="password" type="password" class="form-control" placeholder="Password">
+    <input bs-input [label]="language.login.forms.password" formControlName="password" type="password" class="form-control" [placeholder]="language.login.forms.password">
   </div>
   <div class="form-check">
     <label class="form-check-label">
-      <input formControlName="save" type="checkbox" class="form-check-input"> Save e-mail
+      <input formControlName="save" type="checkbox" class="form-check-input"> {{language.login.forms.checkboxSave}}
     </label>
   </div>
 
@@ -18,6 +18,6 @@
 
   <app-loading *ngIf="loading; else sub"></app-loading>
   <ng-template #sub>
-    <button type="submit" class="btn btn-primary form-control" (click)="submitEvent()">Enter</button>
+    <button type="submit" class="btn btn-primary form-control" (click)="submitEvent()">{{language.login.buttonEnter}}</button>
   </ng-template>
 </form>

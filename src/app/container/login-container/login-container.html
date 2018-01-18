@@ -3,7 +3,7 @@
 
     <div class="card">
       <div class="card-body">
-        <h1 class="card-title" style="text-align:center">BOOTSTRAP BOILERPLATE</h1>
+        <h1 class="card-title" style="text-align:center">{{language.login.titleLogin}}</h1>
 
         <div *ngIf="loading; else form">
           <app-loading></app-loading>
@@ -12,7 +12,7 @@
         <ng-template #form>
           <div *ngIf="loginForm; else forgotForm">
             <app-login [loading]="false" (submitForm)="onSubmit($event)">
-              <a class="small-ng-content forgot-link float-right" (click)="loginForm = false;clearAlert();">Forgot Password</a>
+              <a class="small-ng-content forgot-link float-right" (click)="loginForm = false;clearAlert();">{{language.login.forgotText}}</a>
             </app-login>
           </div>
 

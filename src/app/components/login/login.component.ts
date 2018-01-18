@@ -1,10 +1,13 @@
+import { ConfigService } from './../../services/config.service';
 import { IAlert } from './../../domain/interfaces/IAlert';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ILanguage } from '../../language/ILanguage';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.html'
+  templateUrl: './login.html',
+  providers: [ConfigService]
 })
 export class LoginComponent implements OnInit {
 
@@ -20,9 +23,14 @@ export class LoginComponent implements OnInit {
     }
   };
 
+  language: ILanguage = null;
+
   constructor(
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public configS: ConfigService
   ) {
+    this.language = this.configS.language.getLanguage();
+    console.log(this.language);
     this.buildForm();
   }
 

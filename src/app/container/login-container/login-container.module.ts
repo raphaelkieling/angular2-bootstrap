@@ -6,18 +6,21 @@ import { CommonModule } from '@angular/common';
 import { LoginModule } from '../../components/login/login.module';
 import { RouterModule } from '@angular/router';
 import { LoadingModule } from '../../components/loading/loading.module';
+import { ConfigService } from '../../services/config.service';
 
 @NgModule({
-    declarations: [LoginContainerComponent],
-    imports: [
-        CommonModule,
-        LoginModule,
-        AlertModule,
-        RouterModule,
-        ForgotModule,
-        LoadingModule
-    ],
-    exports: [LoginContainerComponent],
-    providers: [],
+  declarations: [LoginContainerComponent],
+  imports: [
+    CommonModule,
+    LoginModule,
+    AlertModule,
+    RouterModule,
+    ForgotModule,
+    LoadingModule
+  ],
+  exports: [LoginContainerComponent],
+  providers: [
+    ConfigService
+  ],
 })
 export class LoginContainerModule { }
