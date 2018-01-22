@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { AdminContainerModule } from './container/admin-container/admin-container.module';
 import { ConfigService } from './services/config.service';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ConfigService } from './services/config.service';
     AppRouting,
     NotFoundModule,
     RouterModule,
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   providers: [
     BaseService,

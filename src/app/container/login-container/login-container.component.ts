@@ -1,6 +1,7 @@
 import { ConfigService } from './../../services/config.service';
 import { IAlert } from './../../domain/interfaces/IAlert';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login-container',
@@ -24,36 +25,31 @@ import { Component, OnInit } from '@angular/core';
     `]
 })
 export class LoginContainerComponent implements OnInit {
-  alert: IAlert;
   loginForm = true;
   loading = false;
 
   language = null;
-
-  constructor(public configS: ConfigService) {
+  constructor(
+    public configS: ConfigService,
+    private toastr: ToastrService,
+    vcr: ViewContainerRef
+  ) {
     this.language = this.configS.language.getLanguage();
-    console.log(this.language);
   }
 
   ngOnInit() { }
 
   onSubmit(form) {
-    this.alert = {
-      type: 'danger',
-      strong: this.language.login.alert.errorLogin.strong,
-      message: this.language.login.alert.errorLogin.message
-    };
+    this.toastr.error(
+      this.language.login.alert.errorLogin.message,
+      this.language.login.alert.errorLogin.strong
+    );
   }
 
   onSubmitForgot(form) {
-    this.alert = {
-      type: 'success',
-      strong: this.language.login.alert.successForgot.strong,
-      message: this.language.login.alert.successForgot.message
-    };
-  }
-
-  clearAlert() {
-    this.alert = null;
+    this.toastr.success(
+      this.language.login.alert.successForgot.message,
+      this.language.login.alert.successForgot.strong
+    );
   }
 }

@@ -12,7 +12,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^5.0.0",
+    "@angular/animations": "^5.2.1",
     "@angular/cdk": "^5.0.0-rc.2",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
@@ -29,6 +29,7 @@
     "hammerjs": "^2.0.8",
     "md-toast": "0.0.1-alpha.1",
     "ngx-bootstrap": "^2.0.0-beta.9",
+    "ngx-toastr": "^8.1.1",
     "rxjs": "^5.5.2",
     "table-ng-quick": "0.0.0",
     "zone.js": "^0.8.14"

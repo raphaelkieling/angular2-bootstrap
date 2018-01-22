@@ -1,0 +1,13 @@
+{
+    "directory":"",
+    "changer":{
+        "recipient":"$",
+        "input":"navbar"
+    },
+    "commands": [
+        "mkdir $",
+        "ng g m teste/$",
+        "ng g c teste/$-list",
+        "ng g c teste/$-form"
+    ]
+}

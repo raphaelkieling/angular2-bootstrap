@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   @Output() valid = new EventEmitter<boolean>();
   @Input() loading = false;
 
-  loginF: FormGroup;
+  loginF: FormGroup = this.buildForm();
 
   errors = {
     email: {
@@ -30,8 +30,7 @@ export class LoginComponent implements OnInit {
     public configS: ConfigService
   ) {
     this.language = this.configS.language.getLanguage();
-    console.log(this.language);
-    this.buildForm();
+
   }
 
   ngOnInit() { }
@@ -52,7 +51,7 @@ export class LoginComponent implements OnInit {
   }
 
   buildForm() {
-    this.loginF = this.formBuilder.group({
+    return this.formBuilder.group({
       email: [this.getEmailInLocalStorage(), Validators.compose([
         Validators.required,
         Validators.email
